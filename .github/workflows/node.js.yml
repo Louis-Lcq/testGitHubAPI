@@ -26,4 +26,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install --production
     - run: npm install --save xmlhttprequest
-    - run: ls
+    - run: node updateData.js
