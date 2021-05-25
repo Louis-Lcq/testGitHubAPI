@@ -26,7 +26,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install --ci
     - run: npm install --save xmlhttprequest
-    - run: node docs/assets/ajax.js
-    - run: node docs/assets/fromData.js
-    - run: node docs/assets/github.js
     - run: node updateData.js
