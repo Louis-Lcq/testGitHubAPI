@@ -36,3 +36,4 @@ jobs:
     - run: git remote add origin https://benoitgaudou:$GH_token_public_repo@github.com/benoitgaudou/testGitHubAPI.git
     - run: git commit ./docs/assets/data/* --message "update data"
     - run: git status
+    - run: git push origin HEAD:master
