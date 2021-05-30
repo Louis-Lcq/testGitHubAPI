@@ -26,6 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install --ci
+    - run: npm getContinuous --if-present
     - run: npm install --save xmlhttprequest
     - run: node updateData.js
     - run: git config --global user.email "benoit.gaudou@gmail.com"
