@@ -1,3 +1,4 @@
+<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 var xValues = [100,200,300,400,500,600,700,800,900,1000];
 
 new Chart("myChart", {
@@ -22,4 +23,3 @@ new Chart("myChart", {
     legend: {display: false}
   }
 });
-
