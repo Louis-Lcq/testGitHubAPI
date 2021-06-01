@@ -22,5 +22,3 @@
 <script src="./assets/ajax.js"></script>
 <script src="./assets/github.js"></script>
 <script src="./assets/fromData.js"></script>
-<script src="graphique.html"></script>
-<script src="donut.js"></script>
