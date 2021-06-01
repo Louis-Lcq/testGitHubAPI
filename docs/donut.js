@@ -1,44 +1,25 @@
-function createChart(selector, data) {
-    var ctx = jQuery(selector).get(0).getContext("2d");                  
-    new Chart(ctx).Doughnut(data);
-}
+var xValues = [100,200,300,400,500,600,700,800,900,1000];
 
-function displayChart(urldata, selector) {
-    jQuery.get(urldata, function(data) {
-        var invoice_status_data = [
-                {
-                    value: data.status_temp,
-                    color: "#26292C",
-                    highlight: "#363B3F",
-                    label: "Temp"
-                },
-                {
-                    value: data.status_pending,
-                    color: "#FFA500",
-                    highlight: "#FAD694",
-                    label: "Pending"
-                },
-                {
-                    value: data.status_partial,
-                    color: "#E14D43",
-                    highlight: "#FF5A5E",
-                    label: "Partial"
-                },
-                {
-                    value: data.status_complete,
-                    color: "#76AB48",
-                    highlight: "#86BC4A",
-                    label: "Complete"
-                }
-            ];
-            createChart(selector, invoice_status_data);
-        }
-    )
-}
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+      borderColor: "red",
+      fill: false
+    },{
+      data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
+      borderColor: "green",
+      fill: false
+    },{
+      data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+      borderColor: "blue",
+      fill: false
+    }]
+  },
+  options: {
+    legend: {display: false}
+  }
+});
 
-function displayChart1(urldata, selector) {
-    jQuery.get(urldata, function(data) {
-            createChart(selector, data);
-        }
-    )
-}
