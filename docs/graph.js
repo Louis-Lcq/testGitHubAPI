@@ -1,24 +1,23 @@
-var xValues = [100,200,300,400,500,600,700,800,900,1000];
+$.getJSON("https://github.com/Louis-Lcq/testGitHubAPI/blob/master/docs/assets/data/gama.json", function(data) {
+   var labels = data.customers[0].amounts.map(function(e) {
+      return e[0];
+   });
+   var data = data.customers[0].amounts.map(function(e) {
+      return e[1];
+   });
 
-new Chart("myChart", {
-  type: "line",
-  data: {
-    labels: xValues,
-    datasets: [{
-      data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
-      borderColor: "red",
-      fill: false
-    },{
-      data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
-      borderColor: "green",
-      fill: false
-    },{
-      data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
-      borderColor: "blue",
-      fill: false
-    }]
-  },
-  options: {
-    legend: {display: false}
-  }
+   var ctx = document.getElementById('myChart').getContext('2d');
+   var chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+         labels: labels,
+         datasets: [{
+            borderColor: 'red',
+            data: data
+         }]
+      },
+      options: {
+         responsive: 'true',
+      }
+   });
 });
