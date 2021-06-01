@@ -25,4 +25,5 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 <script src="./assets/ajax.js"></script>
 <script src="./assets/github.js"></script>
 <script src="./assets/fromData.js"></script>
+<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 <script src="graph.js"></script>
